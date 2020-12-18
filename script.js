@@ -99,5 +99,20 @@ function writePassword() {
 
 }
 
+// Get the password inputs from the user
+function generatePassword() {
+  var length = parseInt(prompt("How many characters would you like your password to be?"));
+  if (length < 8) {
+    alert("Please make sure you're password is between 8 and 120 characters.");
+  }
+  else if (length > 128) {
+    alert("Please make sure you're password is between 8 and 120 characters.");
+  }
+  else {
+    lowerCase = confirm("Do you want lowercase characters in your password?");
+    upperCase = confirm("Do you want uppercase characters in your password?");
+    numericCharacters = confirm("Do you want numbers in your password?");
+    symbolCharacters = confirm("Do you want special characters in your password?");
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
