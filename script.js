@@ -102,12 +102,17 @@ function writePassword() {
 // Get the password inputs from the user
 function generatePassword() {
   var length = parseInt(prompt("How many characters would you like your password to be?"));
-  if (length < 8) {
-    alert("Please make sure you're password is between 8 and 120 characters.");
+
+  if (length < 8 || length > 128) {
+    alert("Please make sure you're password is between 8 and 128 characters.");
+    generatePassword();
   }
-  else if (length > 128) {
-    alert("Please make sure you're password is between 8 and 120 characters.");
+  
+  else if (isNaN(length)) {
+    alert("Please enter a number between 8 and 128 characters.");
+    generatePassword();
   }
+
   else {
     lowerCase = confirm("Do you want lowercase characters in your password?");
     upperCase = confirm("Do you want uppercase characters in your password?");
