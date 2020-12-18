@@ -133,5 +133,15 @@ function generatePassword() {
     }
   }
 
+
+  // Loop through the arrays to then create a password that matches the length of length
+  for (var i = 0; i < length; i++) {
+    var loop = options[Math.floor(Math.random() * options.length)];
+    password.push(loop);
+  }
+  password = password.join("");
+  return password;
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
