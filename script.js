@@ -114,5 +114,24 @@ function generatePassword() {
     numericCharacters = confirm("Do you want numbers in your password?");
     symbolCharacters = confirm("Do you want special characters in your password?");
 
+    // Take the user input and determine which arrays it applies to.
+
+    if (lowerCase === true) {
+      options = options.concat(lowerLetters);
+    }
+
+    if (upperCase === true) {
+      options = options.concat(upperLetters);
+    }
+
+    if (numericCharacters === true) {
+      options = options.concat(numberCharacters);
+    }
+
+    if (symbolCharacters === true) {
+      options = options.concat(specialCharacters);
+    }
+  }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
